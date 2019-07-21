@@ -1024,6 +1024,52 @@ namespace casadi {
 
   };
 
+
+/** \brief Class to achieve minimal overhead function evaluations
+*/
+class CASADI_EXPORT FunctionMemory {
+  Function f_;
+  std::vector<double> w;
+  std::vector<casadi_int> iw;
+  std::vector<const double*> arg;
+  std::vector<double*> res;
+  FunctionInternal* f_node;
+  casadi_int mem;
+  void *mem_;
+  int ret_;
+public:
+  /** \brief Main constructor */
+  FunctionMemory(const Function& f);
+#ifndef SWIG
+  ~FunctionMemory();
+  FunctionMemory(const FunctionMemory& f);
+  FunctionMemory& operator=(const FunctionMemory& f);
+#endif // SWIG
+  
+  /** \brief Set input buffer for input i
+
+      mem.set_arg(0, memoryview(a))
+
+      Note that CasADi uses 'fortran' order: column-by-column
+  */
+  void set_arg(casadi_int i, const double* a, casadi_int size);
+
+  /** \brief Set output buffer for ouput i
+
+      mem.set_res(0, memoryview(a))
+
+      Note that CasADi uses 'fortran' order: column-by-column
+  */
+  void set_res(casadi_int i, double* a, casadi_int size);
+  /// Get last return value
+  int ret();
+  void _eval();
+  void* _self() { return this; }
+};
+
+void CASADI_EXPORT _function_memory_eval(void* r);
+
+
 } // namespace casadi
 
 #include "casadi_interrupt.hpp"

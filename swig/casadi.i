@@ -2294,6 +2294,31 @@ namespace std {
   #define L_STR "str"
 #endif
 
+ // Pass input by value, convert argument
+%typemap(in, doc="memoryview(ro)", noblock=1, fragment="casadi_all") (const double * a, casadi_int size) (Py_buffer* buffer) {
+  if (!PyMemoryView_Check($input)) SWIG_exception_fail(SWIG_TypeError, "Must supply a MemoryView.");
+  buffer = PyMemoryView_GET_BUFFER($input);
+  $1 = static_cast<double*>(buffer->buf); // const double cast comes later
+  $2 = buffer->len;
+ }
+
+%typemap(in, doc="memoryview(rw)", noblock=1, fragment="casadi_all") (double * a, casadi_int size)  (Py_buffer* buffer) {
+  if (!PyMemoryView_Check($input)) SWIG_exception_fail(SWIG_TypeError, "Must supply a writable MemoryView.");
+  buffer = PyMemoryView_GET_BUFFER($input);
+  if (buffer->readonly) SWIG_exception_fail(SWIG_TypeError, "Must supply a writable MemoryView.");
+  $1 = static_cast<double*>(buffer->buf);
+  $2 = buffer->len;
+ }
+
+
+%typemap(in, doc="void*", noblock=1, fragment="casadi_all") void* {
+  $1 = PyCapsule_GetPointer($input, NULL);
+}
+
+
+%typemap(out, doc="void*", noblock=1, fragment="casadi_all") void* {
+  $result = PyCapsule_New($1, NULL,NULL);
+}
 %casadi_typemaps(L_STR, PREC_STRING, std::string)
 %casadi_template(LL L_STR LR, PREC_VECTOR, std::vector<std::string>)
 %casadi_typemaps("Sparsity", PREC_SPARSITY, casadi::Sparsity)
@@ -3968,8 +3993,32 @@ namespace casadi{
       else:
         # Named inputs -> return dictionary
         return self.call(kwargs)
+
+    def memory(self):
+      """
+      Create a FunctionMemory object for evaluating with minimal overhead
+      """
+      return FunctionMemory(self)
   %}
+
+
  }
+
+%extend FunctionMemory {
+  %pythoncode %{
+  def caller(self):
+    """
+    Create an argument-less Python function that will evaluate the CasADi Function upon call
+
+    Example:
+       ff = mem.caller()
+       ff() # Do the evaluation
+    """
+    import functools
+    return functools.partial(_casadi._function_memory_eval, self._self())
+
+  %}
+}
 }
 #endif // SWIGPYTHON
 
