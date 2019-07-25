@@ -8,3 +8,9 @@ CasADi's MATLAB front-end uses an extension of SWIG - the software used to gener
 
 * Compile IPOPT from source:
 
+```
+  sudo apt-get install bison -y
+  sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython
+  sudo apt-get install -y python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev
+  sudo apt-get install -y libblas-dev liblapack-dev libxml2-dev
+```
