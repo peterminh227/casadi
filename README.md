@@ -59,8 +59,8 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/casadi-linux-matlab/ipopt-install/
 * Compile CasAdi 
 
 ```
-# Clone the newest update
-git clone https://github.com/casadi/casadi.git -b master casadi
+# Clone the newest update from Develop branch - CasAdi 3.5
+git clone https://github.com/casadi/casadi.git -b develop casadi
 cd casadi
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/opt/casadi-linux-matlab/casadi-install -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON ..
