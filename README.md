@@ -79,7 +79,8 @@ cd ../coinhsl
 sudo make
 sudo make install
 # create LINKER
-sudo ln -s opt/coinhsl/lib/libcoinhsl.so opt/coinhsl/lib/libhsl.so
+cd /opt/coin/hsl/lib
+sudo ln -s libcoinhsl.so libhsl.so
 ```
 * Export PATHs before using CasAdi
 ```
