@@ -31,7 +31,7 @@ cd Mumps && ./get.Mumps && cd .. (Sparse direct linear solver with permissive li
 cd ..; mkdir build; cd build
 
 # configuration, --prefix = <installation location> = /opt/casadi-linux-matlab/
- ../configure coin_skip_warn_cxxflags=yes --prefix=/opt/casadi-linux-matlab/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD
+ ../configure coin_skip_warn_cxxflags=yes --prefix=/opt/casadi-linux-matlab/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD 
 sudo make
 sudo make install
 cd ../../
