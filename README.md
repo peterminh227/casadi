@@ -34,6 +34,8 @@ cd ..; mkdir build; cd build
  ../configure coin_skip_warn_cxxflags=yes --prefix=/opt/casadi-linux-matlab/ipopt-install --disable-shared CXX=g++ CC=gcc F77=gfortran ADD_FFLAGS="-fPIC -fopenmp -fexceptions" ADD_CFLAGS="-fPIC -fopenmp -fno-common -fexceptions" ADD_CXXFLAGS="-fPIC -fopenmp -fno-common -fexceptions" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD 
 --> new
  ../configure coin_skip_warn_cxxflags=yes --prefix=/opt/casadi-linux-matlab/ipopt-install --disable-shared CXX=g++ CC=gcc F77=gfortran ADD_FFLAGS="-fPIC -fopenmp -fexceptions" ADD_CFLAGS="-fPIC -fopenmp -fno-common -fexceptions" ADD_CXXFLAGS="-fPIC -fopenmp -fno-common -fexceptions" --with-blas-lib="-L/opt/intel/mkl/lib/intel64/ -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-lapack-lib="-L/opt/intel/mkl/lib/intel64 -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-mumps=BUILD --with-metis=BUILD 
+--> new with Pardiso solver
+ ../configure coin_skip_warn_cxxflags=yes --prefix=/opt/casadi-linux-matlab/ipopt-install --disable-shared CXX=g++ CC=gcc F77=gfortran ADD_FFLAGS="-fPIC -fopenmp -fexceptions" ADD_CFLAGS="-fPIC -fopenmp -fno-common -fexceptions" ADD_CXXFLAGS="-fPIC -fopenmp -fno-common -fexceptions" --with-blas-lib="-L/opt/intel/mkl/lib/intel64/ -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-lapack-lib="-L/opt/intel/mkl/lib/intel64 -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-mumps=BUILD --with-metis=BUILD --with-pardiso="/opt/pardiso-lib/libpardiso600-GNU720-X86-64.so -lgfortran -lquadmath"
  
 sudo make
 sudo make install
@@ -90,5 +92,6 @@ sudo ln -s libcoinhsl.so libhsl.so
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/casadi-linux-matlab/casadi-install/casadi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/casadi-linux-matlab/ipopt-install/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/coinhsl/lib
-
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/mkl/lib/intel64
+export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/intel64/libmkl_avx2.so:/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_intel_lp64.so:/opt/intel/mkl/lib/intel64/libmkl_intel_thread.so:/opt/intel/lib/intel64_lin/libiomp5.so
 ```
