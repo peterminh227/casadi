@@ -59,6 +59,7 @@ cd ..
 export SWIG_HOME="/opt/casadi-linux-matlab/swig-install"
 export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$PATH"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/casadi-linux-matlab/ipopt-install/lib/pkgconfig"
+export CLANG=/usr/lib/llvm-6.0/
 ```
 
 * Compile CasAdi 
@@ -69,6 +70,8 @@ git clone https://github.com/casadi/casadi.git -b develop casadi
 cd casadi
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/opt/casadi-linux-matlab/casadi-install -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON ..
+## with CLANG
+cmake -DCMAKE_INSTALL_PREFIX=/opt/casadi-linux-matlab/casadi-install -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DWITHCLANG=ON ..
 sudo make
 sudo make install
 ```
