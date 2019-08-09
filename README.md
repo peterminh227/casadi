@@ -101,4 +101,4 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 # Windows 64bit - MSYS2
 * IPOPT
 ```
-../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD -with-hsl-lib="/d/coin-hsl-lib/lib" --with-pardiso="/d/casadi-windows-matlab-pardiso```
+../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD -with-hsl-lib="/d/coin-hsl-lib/lib" --with-pardiso="/d/casadi-windows-matlab/pardiso"
