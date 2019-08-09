@@ -98,3 +98,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/coinhsl/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/mkl/lib/intel64
 export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/intel64/libmkl_avx2.so:/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_intel_lp64.so:/opt/intel/mkl/lib/intel64/libmkl_intel_thread.so:/opt/intel/lib/intel64_lin/libiomp5.so
 ```
+*** Windows 64bit - MSYS2
+* IPOPT
+```
+../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD -with-hsl-lib="/d/coin-hsl-lib/lib" --with-pardiso="/d/casadi-windows-matlab-pardiso```
