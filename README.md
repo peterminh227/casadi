@@ -101,6 +101,6 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 # Windows 64bit - MSYS2
 * IPOPT
 ```
-../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD -with-hsl-lib="/d/coin-hsl-lib/lib"
+../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="/d/coinhsl-lib/lib" --with-hsl-incdir="/d/coinhsl-lib/include"
 #NEW
 ../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking --disable-shared ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-mumps=BUILD --with-metis=BUILD -with-hsl-lib="/d/coin-hsl-lib/lib" --with-blas-lib="-L${MKL_ROOT} -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-lapack-lib="-L${MKL_ROOT} -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_lapack95_lp64 -lmkl_sequential -lmkl_core -lgfortran -fopenmp -lpthread -lm -ldl" --with-mumps=BUILD --with-metis=BUILD --with-pardiso="/d/casadi-windows-matlab/pardiso-lib/libpardiso600-WIN-X86-64-MINGW.dll -lgfortran -lquadmath"
