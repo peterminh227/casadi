@@ -109,3 +109,9 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 ```
 cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DMATLAB_ROOT="/c/Program Files/MATLAB/R2018b" -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install" -Wno-dev -G "MSYS Makefiles" ..
 ```
+* SWIG
+```
+git clone -b matlab-customdoc https://github.com/jaeandersson/swig.git
+./autogen.sh
+./configure --prefix=/d/casadi-windows-matlab/swig_install --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+```
