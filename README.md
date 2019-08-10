@@ -107,7 +107,7 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 ```
 * CasAdi 
 ```
-cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DMATLAB_ROOT="/c/Program Files/MATLAB/R2018b" -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install" -Wno-dev -G "MSYS Makefiles" ..
+ cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DMATLAB_ROOT="/c/Program Files/MATLAB/R2018b" -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin/swig" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install/share/swig/3.0.11" -Wno-dev -G "MSYS Makefiles" ..
 ```
 * SWIG
 ```
