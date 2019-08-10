@@ -113,5 +113,16 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 ```
 git clone -b matlab-customdoc https://github.com/jaeandersson/swig.git
 ./autogen.sh
-./configure --prefix=/d/casadi-windows-matlab/swig_install --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+./configure --prefix=/d/casadi-windows-matlab/swig-install --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+```
+* Lapack
+```
+wget http://www.coin-or.org/BuildTools/Lapack/lapack-3.4.2.tgz
+tar -xf lapack-3.4.2.tgz
+cd lapack-3.4.2
+mkdir build
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=../../toolchain-lapack.cmake -DCMAKE_INSTALL_PREFIX=/d/casadi-windows-matlab/lapack-install -Wno-dev -G "MSYS Makefiles" ..
+make
+make install
 ```
