@@ -110,7 +110,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmak
 export SWIG_HOME="/d/casadi-windows-matlab/swig-install"
 export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$SWIG_HOME/share/swig/3.0.11:$SWIG_HOME/share/swig/3.0.11/matlab:$PATH"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/d/casadi-windows-matlab/ipopt-install/lib/pkgconfig:/d/coinhsl-lib/lib/pkgconfig"
-export PATH="/d/casadi-windows-matlab/ipopt-install/lib:/d/casadi-windows-matlab/lapack-install/lib:/c/Program Files/MATLAB/R2018b/bin:$PATH"
+export PATH="/d/casadi-windows-matlab/ipopt-install/lib:/d/casadi-windows-matlab/lapack-install/lib:/c/PROGRA~1/MATLAB/R2018b/bin:$PATH"
 ```
 
 * CasAdi 
@@ -119,7 +119,7 @@ export PATH="/d/casadi-windows-matlab/ipopt-install/lib:/d/casadi-windows-matlab
  #new
 cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DMATLAB_ROOT="/c/Program Files/MATLAB/R2018b" -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin/swig" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install/share/swig/3.0.11" -Wno-dev -G "MSYS Makefiles" -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DBLA_STATIC=ON -DBLA_VENDOR=Generic -DBLA_DIR=/d/casadi-windows-matlab/lapack-install/lib -DBLAS_LIBRARIES=/d/casadi-windows-matlab/BLAS-3.6.0 ..
 #newW
-cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DMATLAB_ROOT="/c/Program Files/MATLAB/R2018b" -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin/swig" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install/share/swig/3.0.11" -Wno-dev -G "MSYS Makefiles" -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DBLA_STATIC=ON -DBLA_VENDOR=Generic -DBLA_DIR=/d/casadi-windows-matlab/lapack-install/lib -DBLAS_LIBRARIES=/d/casadi-windows-matlab/BLAS-3.6.0 ..
+cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DSWIG_EXECUTABLE="/d/casadi-windows-matlab/swig-install/bin/swig" -DSWIG_DIR="/d/casadi-windows-matlab/swig-install/share/swig/3.0.11" -Wno-dev -G "MSYS Makefiles" -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DBLA_STATIC=ON -DBLA_VENDOR=Generic -DBLA_DIR=/d/casadi-windows-matlab/lapack-install/lib -DBLAS_LIBRARIES=/d/casadi-windows-matlab/BLAS-3.6.0 ..
 
 
 ```
