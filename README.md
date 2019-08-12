@@ -141,9 +141,12 @@ make
 make install
 ``` 
 ## INC_DIR
+```
 /opt/casadi-linux-matlab/ipopt-install/include/coin
 /opt/casadi-linux-matlab/ipopt-install/include/coin/ThirdParty
+```
 ## LIB_DIR
+```
 /opt/casadi-linux-matlab/ipopt-install/lib
 /opt/intel/mkl/lib/intel64/opt/intel/mkl/lib/intel64/
 /opt/casadi-linux-matlab/ipopt-install/lib
@@ -155,7 +158,9 @@ make install
 /opt/intel/compilers_and_libraries_2019.4.243/linux/compiler/lib/intel64_lin
 /opt/intel/compilers_and_libraries_2019.4.243/linux/mkl/lib/intel64_lin/usr/lib
 /opt/casadi-linux-matlab/ipopt-install/lib
+```
 ### LIBS
+```
 ipopt
 mkl_intel_lp64
 mkl_lapack95_lp64
@@ -175,4 +180,4 @@ gfortranpthreadmdl
 gfortran
 mgompquadmathpthread
 coinmetis
-
+```
