@@ -110,7 +110,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmak
 export SWIG_HOME="/d/casadi-windows-matlab/swig-install"
 export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$SWIG_HOME/share/swig/3.0.11:$SWIG_HOME/share/swig/3.0.11/matlab:$PATH"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/d/casadi-windows-matlab/ipopt-install/lib/pkgconfig:/d/coinhsl-lib/lib/pkgconfig"
-export PATH="/d/casadi-windows-matlab/ipopt-install/lib:/d/casadi-windows-matlab/lapack-install/lib:/c/PROGRA~1/MATLAB/R2018b/bin:$PATH"
+export PATH="/d/casadi-windows-matlab/ipopt-install/lib:/d/casadi-windows-matlab/lapack-install/lib:/c/Program\ Files/MATLAB/R2018b/bin:$PATH"
 ```
 
 * CasAdi 
