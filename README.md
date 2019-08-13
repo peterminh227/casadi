@@ -191,3 +191,7 @@ gfortran
 mgompquadmathpthread
 coinmetis
 ```
+
+To perform -llib:
+(libcoinhsl.a libcoinhsl.ls libcoinhsl.dll.a libhsl.a) --> /mingw64/lib
+
