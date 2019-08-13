@@ -105,6 +105,15 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 #NEW
 cmake -DCMAKE_TOOLCHAIN_FILE="/d/casadi-installation-files/toolchain-casadi.cmake" -DCMAKE_INSTALL_PREFIX="/d/casadi-windows-matlab/casadi-install" -DWITH_THREAD=ON -DWITH_COMMON=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DIPOPT_LIBRARIES="/d/casadi-windows-matlab/ipopt-install/lib" -DWITH_MATLAB=ON -DIPOPT_INCLUDE_DIRS="/d/casadi-windows-matlab/ipopt-install/include" -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -Wno-dev -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DBLAS_LIBRARIES=/d/casadi-windows-matlab/BLAS-3.6.0 -DWITH_LAPACK=ON -DLAPACK_LIBRARIES=/d/casadi-windows-matlab/lapack-install/lib -G "MSYS Makefiles" ..
 ```
+* Obtain HSL - with MSYS2 and openblas
+cd coinhsl-source
+./configure --prefix=/d/coinhsl --with-blas="-lopenblas" CXXFLAGS="-O3 -fopenmp" FCFLAGS="-O3 -fopenmp" CFLAGS="-O3 -fopenmp"
+make
+make install
+cd /d/coinhsl/bin
+ln -s  ln -s libcoinhsl-0.dll libhsl.dll
+export PATH=$PATH:/d/coinhsl/
+
 * before cmake casadi
 ```
 export SWIG_HOME="/d/casadi-windows-matlab/swig-install"
