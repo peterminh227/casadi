@@ -101,7 +101,7 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 # Windows 64bit - MSYS2
 * IPOPT
 ```
-../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="L/d/coinhsl-lib/lib -lhsl" --with-hsl-incdir="/d/coinhsl-lib/include"
+../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="-L/d/coinhsl/bin -Wl,-Bdynamic -lhsl" --with-hsl-incdir="/d/coinhsl/include"
 
 ```
 * Compile HSL - with MSYS2 and openblas
