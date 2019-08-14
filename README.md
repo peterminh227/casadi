@@ -99,26 +99,16 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/mkl/lib/intel64
 export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/intel64/libmkl_avx2.so:/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_intel_lp64.so:/opt/intel/mkl/lib/intel64/libmkl_intel_thread.so:/opt/intel/lib/intel64_lin/libiomp5.so
 ```
 # Windows 64bit - MSYS2
-
-* dependencies for MSYS2
-```
-pacman -Syuu
-pacman -Suu
-pacman -S make gettext base-devel
-pacman -S mingw64/mingw-w64-x86_64-gcc
-pacman -S mingw64/mingw-w64-x86_64-gcc-fortran
-pacman -S make
-
-pacman -S mingw64/mingw-w64-x86_64-cmake
-
-```
+* MSYS2: 
+pacman 
 * IPOPT
 ```
 ../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="-L/d/coinhsl/bin -Wl,-Bdynamic -lhsl" --with-hsl-incdir="/d/coinhsl/include"
-
+# With Pardiso --
+../configure --prefix=/d/casadi-windows-matlab/ipopt-install-pardiso --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas-lib="${MKL_LIBS}" --with-lapack-lib="${MKL_LIBS}" --with-pardiso="/d/casadi-windows-matlab/parsiso-lib/libpardiso600-WIN-X86-64.dll -lgfortran -lquadmath" --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="-L/d/coinhsl/bin -Wl,-Bdynamic -lhsl" --with-hsl-incdir="/d/coinhsl/include"
 ```
 * Compile HSL - with MSYS2 and openblas
-```
+
 cd coinhsl-source
 ./configure --prefix=/d/coinhsl --with-blas="-lopenblas" CXXFLAGS="-O3 -fopenmp" FCFLAGS="-O3 -fopenmp" CFLAGS="-O3 -fopenmp"
 make
@@ -126,7 +116,7 @@ make install
 cd /d/coinhsl/bin
 ln -s  ln -s libcoinhsl-0.dll libhsl.dll
 export PATH=$PATH:/d/coinhsl/
-```
+
 * before cmake casadi
 ```
 export SWIG_HOME="/d/casadi-windows-matlab/swig-install"
