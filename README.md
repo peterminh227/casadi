@@ -105,8 +105,10 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 pacman -Syuu
 pacman -Suu
 pacman -S make gettext base-devel
-pacman -S mingw-w64-x86_64-gcc
-pacman -S msys2-devel 
+pacman -S mingw64/mingw-w64-x86_64-gcc
+pacman -S mingw64/mingw-w64-x86_64-gcc-fortran
+pacman -S make
+
 pacman -S mingw64/mingw-w64-x86_64-cmake
 
 ```
