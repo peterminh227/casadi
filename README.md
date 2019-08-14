@@ -100,13 +100,15 @@ export LD_PRELOAD=/opt/intel/mkl/lib/intel64/libmkl_def.so:/opt/intel/mkl/lib/in
 ```
 # Windows 64bit - MSYS2
 * MSYS2: 
-
+```
 pacman -Syuu
 pacman -Suu
 pacman -S make gettext base-devel
 pacman -S mingw64/mingw-w64-x86_64-gcc
 pacman -S mingw64/mingw-w64-x86_64-gcc-fortran
 pacman -S make
+pacman -S mingw-w64-x86_64-dlfcn
+```
 * IPOPT
 ```
 ../configure --prefix=/d/casadi-windows-matlab/ipopt-install --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="-L/d/coinhsl/bin -Wl,-Bdynamic -lhsl" --with-hsl-incdir="/d/coinhsl/include"
