@@ -116,7 +116,7 @@ pacman -S mingw-w64-x86_64-dlfcn
 ../configure --prefix=/d/casadi-windows-matlab/ipopt-install-pardiso --enable-dependency-linking ADD_FFLAGS="-fPIC -fopenmp" ADD_CFLAGS="-fPIC -fopenmp" ADD_CXXFLAGS="-fPIC -fopenmp" --with-blas-lib="${MKL_LIBS}" --with-lapack-lib="${MKL_LIBS}" --with-pardiso="/d/casadi-windows-matlab/parsiso-lib/libpardiso600-WIN-X86-64.dll -lgfortran -lquadmath" --with-mumps=BUILD --with-metis=BUILD --with-hsl-lib="-L/d/coinhsl/bin -Wl,-Bdynamic -lhsl" --with-hsl-incdir="/d/coinhsl/include"
 ```
 * Compile HSL - with MSYS2 and openblas
-
+```
 cd coinhsl-source
 ./configure --prefix=/d/coinhsl --with-blas="-lopenblas" CXXFLAGS="-O3 -fopenmp" FCFLAGS="-O3 -fopenmp" CFLAGS="-O3 -fopenmp"
 make
@@ -124,7 +124,7 @@ make install
 cd /d/coinhsl/bin
 ln -s  ln -s libcoinhsl-0.dll libhsl.dll
 export PATH=$PATH:/d/coinhsl/
-
+```
 * before cmake casadi
 ```
 export SWIG_HOME="/d/casadi-windows-matlab/swig-install"
