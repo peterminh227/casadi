@@ -117,6 +117,7 @@ pacman -S mingw-w64-x86_64-dlfcn
 ```
 * Compile HSL - with MSYS2 and openblas
 ```
+pacman -S mingw-w64-x86_64-openblas
 cd coinhsl-source
 ./configure --prefix=/d/coinhsl --with-blas="-lopenblas" CXXFLAGS="-O3 -fopenmp" FCFLAGS="-O3 -fopenmp" CFLAGS="-O3 -fopenmp"
 make
