@@ -79,15 +79,12 @@ sudo make install
 ```
 # get HSL source code <http://www.hsl.rl.ac.uk/ipopt/> extract to /home/<user>/coinhsl
 # get Metis
-wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz
-tar -xvf metis-4.0.3.tar.gz
-mv metis-4.0.3 ../coinhsl
-cd ../coinhsl
+git clone https://github.com/CIBC-Internal/metis-4.0.3.git
 ./configure --prefix=/opt/coinhsl/ LIBS="-llapack" --with-blas="-L/usr/lib -lblas" CXXFLAGS="-g -O2 -fopenmp" FCFLAGS="-g -O2 -fopenmp" CFLAGS="-g -O2 -fopenmp"
 sudo make
 sudo make install
 # create LINKER
-cd /opt/coin/hsl/lib
+cd /opt/coinhsl/lib
 sudo ln -s libcoinhsl.so libhsl.so
 ```
 * Export PATHs before using CasAdi
